@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-invistamldemo-dev-172438-authRole",
+            "UnauthRoleArn": "arn:aws:iam::982831078337:role/amplify-invistamldemo-dev-172438-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::982831078337:role/amplify-invistamldemo-dev-172438-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-invistamldemo-dev-172438-deployment",
+            "UnauthRoleName": "amplify-invistamldemo-dev-172438-unauthRole",
+            "StackName": "amplify-invistamldemo-dev-172438",
+            "StackId": "arn:aws:cloudformation:us-east-1:982831078337:stack/amplify-invistamldemo-dev-172438/396a5390-9560-11ea-9fc3-0a140a53308d",
+            "AmplifyAppId": "d3p2gjz3qf9lu3"
+        },
+        "categories": {
+            "auth": {
+                "invistamldemo76cf20e3": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3p2gjz3qf9lu3",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}

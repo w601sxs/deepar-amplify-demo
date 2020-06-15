@@ -1,0 +1,86 @@
+<div class="flex">
+  <div class="flex-item">
+    <form>
+      <div>
+        <span>0</span>
+        <mat-slider min="0.1" max="99" step="1" value="30" name="confidence" [(ngModel)]="confidence"></mat-slider>          
+        <span>100</span>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [value]="today"
+            (dateInput)="onDateChange($event)"
+            (dateChange)="onDateChange($event)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-hint align="start">
+            <strong>Select a start date for the data points.</strong>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width" (change)="onDataChange($event)">
+          <mat-label>Data points</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            name="dataPoints"
+            [(ngModel)]="dataPoints"
+          ></textarea>
+          <mat-hint align="start">
+            <strong
+              >Enter a comma-separated series of data points sampled at 2-hour
+              intervals.</strong
+            >
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <mat-label>Select a Data Set</mat-label>
+          <mat-select name="dataPointOptions" [(ngModel)]="dataPoints">
+            <mat-option *ngFor="let dataset of datasets" [value]="dataset.points">
+              {{dataset.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <button class="left-aligned" mat-raised-button color="primary" [disabled]="buttonDisabled" (click)="load($event)">
+          Predict Usage
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="flex-item">
+    <div class="progress-header">
+      <mat-progress-bar *ngIf="loading" mode="indeterminate">
+      </mat-progress-bar>
+    </div>
+    <div style="display: block;">
+      <canvas
+        baseChart
+        width="80"
+        height="30"
+        [datasets]="lineChartData"
+        [options]="lineChartOptions"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        [plugins]="lineChartPlugins"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+  </div>
+</div>

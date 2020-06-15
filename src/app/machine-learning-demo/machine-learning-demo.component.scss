@@ -1,0 +1,48 @@
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-item {
+    margin: auto;
+    align-self: center;
+    flex-basis: 60%;
+    text-align: center;
+}
+
+canvas[baseChart] {
+  width: 90%;
+}
+
+form {
+    min-width: 250px;
+    max-width: 600px;
+    width: 100%;
+    display: inline-block;
+}
+
+form div {
+    width: 100%;
+    margin: 8px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.left-aligned {
+    margin: auto;
+    align-self: center;
+}
+
+.progress-header {
+    height: 10px;
+    position: relative;
+}
+
+.progress-header * {
+    position: absolute;
+    bottom: 0;    
+}
