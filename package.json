@@ -27,7 +27,7 @@
     "aws-amplify": "^3.0.10",
     "chart.js": "^2.9.3",
     "chartjs-plugin-annotation": "^0.5.7",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "ng2-charts": "^2.3.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
